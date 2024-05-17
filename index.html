@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Mağazası</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+
+<body>
+
+    <header>
+        <div id="loading-screen">
+            <h1>Game Store</h1>
+            <div class="loader"></div>
+          </div>
+          <div id="content" style="display: none;">
+          </div>
+
+        <div>
+            <h1 class="head-name">Game Store</h1>
+        </div>
+
+        
+    </header>
+
+    <div class="ticker-tape">
+        <div class="ticker">
+          <div class="ticker__item">HOŞGELDİNİZ</div>
+          <div> class="ticker__item">HOŞGELDİNİZ</div>
+          <div class="ticker__item">HOŞGELDİNİZ</div>
+          <div class="ticker__item">HOŞGELDİNİZ</div>
+        </div>
+      </div>
+    <div>
+        <div id="clock">
+        </div>
+
+        <div id="date">
+
+        </div>
+    </div>
+
+    <div id="mousePosition">Mouse Pozisyonu: (0, 0)</div>
+
+    <div class="open-btn" onclick="toggleSidebar()">
+        &#9776;
+    </div>
+
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <h2>Menü</h2>
+            <a href="index.html">Anasayfa</a>
+            <a href="#" onclick="toggleGameView()">Oyunlar</a>
+            <a href="#" id="hakkimizda">Hakkımızda</a>
+            <a href="contact.html">İletişim</a>
+            <a href="https://www.google.com" id="exitButton">Siteden Çık</a>
+            <div><button id="btn" onclick="toggleDarkMode()">Koyu Tema</button></div>
+        </div>
+    </div>
+
+    
+    <div class="main-content">
+        <!-- İlk satır -->
+        <div class="row">
+            
+            <div class="card">
+                <h2>Counter-Strike 2</h2>
+                <p>Birinci Şahıs Nişancı Oyunu</p>
+                <span><iframe src="https://store.steampowered.com/widget/730/"></iframe></span>
+            </div>
+            
+            <div class="card">
+                <h2>Assassin's Creed Valhalla</h2>
+                <p>Aksiyon, Macera, RYO</p>
+                <span><iframe src="https://store.steampowered.com/widget/2208920/791024/"></iframe></span>
+            </div>
+            
+            <div class="card">
+                <h2>Street Fighter</h2>
+                <p>Dövüş Oyunu</p>
+                <span><iframe src="https://store.steampowered.com/widget/310950/869050/"></iframe></span>
+            </div>
+
+            <div class="card">
+                <h2>Dying Light</h2>
+                <p>Aksiyon,RYO</p>
+                <span><iframe src="https://store.steampowered.com/widget/239140/604635/"></iframe></span>
+            </div>
+            
+            <div class="card">
+                <h2>The Forest</h2>
+                <p>Aksiyon, Bağımsız Yapımcı, Simülasyon</p>
+                <span><iframe src="https://store.steampowered.com/widget/242760/"></iframe></span>
+            </div>
+
+            <div class="card">
+                <h2>Metro Exodus</h2>
+                <p>Aksiyon</p>
+                <span><iframe src="https://store.steampowered.com/widget/412020/298828/"></iframe></span>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="card">
+                <h2>A Way Out</h2>
+                <p>Aksiyon, Macera, Bağımsız Yapımcı</p>
+                <span><iframe src="https://store.steampowered.com/widget/1222700/"></iframe></span>
+            </div>
+            
+            <div class="card">
+                <h2>Grand Theft Auto V</h2>
+                <p>Açık dünya,Aksiyon, Macera</p>
+                <span><iframe src="https://store.steampowered.com/widget/271590/"></iframe></span>
+            </div>
+            
+            <div class="card">
+                <h2>Far Cry 5</h2>
+                <p> Aksiyon, Macera</p>
+                <span><iframe src="https://store.steampowered.com/widget/552520/"></iframe></span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <table id="gameTable" style="display: none;">
+            
+            <tbody>
+                <tr>
+                    <td>Counter-Strike 2</td>
+                    <td>Birinci Şahıs Nişancı Oyunu</td>
+                    <td><iframe src="https://store.steampowered.com/widget/730/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>Assassin's Creed Valhalla</td>
+                    <td>Aksiyon, Macera, RYO</td>
+                    <td><iframe src="https://store.steampowered.com/widget/2208920/791024/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>Street Fighter</td>
+                    <td>Dövüş Oyunu</td>
+                    <td><iframe src="https://store.steampowered.com/widget/310950/869050/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>Dying Light</td>
+                    <td>Aksiyon,RYO</td>
+                    <td><iframe src="https://store.steampowered.com/widget/239140/604635/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>The Forest</td>
+                    <td>Aksiyon, Bağımsız Yapımcı, Simülasyon</td>
+                    <td><iframe src="https://store.steampowered.com/widget/242760/"></iframe></td>
+                </tr>   
+
+                <tr>
+                    <td>Metro Exodus</td>
+                    <td>Aksiyon</td>
+                    <td><iframe src="https://store.steampowered.com/widget/412020/298828/"></iframe></td>
+                </tr> 
+
+                <tr>
+                    <td>A Way Out</td>
+                    <td>Aksiyon, Macera, Bağımsız Yapımcı</td>
+                    <td><iframe src="https://store.steampowered.com/widget/1222700/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>Grand Theft Auto V</td>
+                    <td>Açık dünya,Aksiyon, Macera</td>
+                    <td><iframe src="https://store.steampowered.com/widget/271590/"></iframe></td>
+                </tr>
+
+                <tr>
+                    <td>Far Cry 5</td>
+                    <td>Aksiyon, Macera</td>
+                    <td><iframe src="https://store.steampowered.com/widget/552520/"></iframe></td>
+                </tr>
+            </tbody>        
+        </table>
+
+</div>
+    <div id="bottomSection" class="bottom-section" style="display: none;">
+        <div class="bottom-content">
+            <h3>Additional Information</h3>
+                <p>This is some additional information that you want to display.</p>
+        </div>
+
+        <div>
+            <button class="close-btn" onclick="toggleBottomSection()">Close</button>
+        </div>
+    </div>
+
+    
+
+    <div>
+        <button class="scroll-to-top" id="scrollToTopButton" onclick="scrollToTop()">
+            &#8593;
+        </button>
+    </div>
+
+    <div class="information-cards">
+        <div class="info-card left">
+            <div class="arrow">&larr;</div> 
+            <div class="content">
+                <h2></h2>
+                <p>Sana Daha iyi bir hizmet sunulmasını ister misin?Neden sosyal medya hesaplarımızı kontrol etmiyorsun!!</p>
+            </div>
+        </div>
+        <div class="info-card right">
+            <div class="arrow">&larr;</div> 
+            <div class="content">
+                <h2></h2>
+                <span><p>Görünüşe göre burda vakit geçirmeyi sevdin(HADİ BİRAZ OYUN AL)</p></span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="esports-news">
+        <h2><span>eSports Haberleri</span></h2>
+        <div class="news-article">
+            <h3>League of Legends</h3>
+            <img src="https://cdnr.escharts.com/uploads/public/5ea/009/7b9/5ea0097b98447329170813.png?width=32&amp;height=32&amp;mode=crop&amp;quality=75&amp;extension=png" class="w-4 h-4" alt="lol">
+            <span>Sezon Ortası Turnuvası 2024 bugün play-off'larla devam etti ve heyecan verici G2 Esports vs. T1 serisi eş zamanlı 2,4 milyondan fazla izleyiciye ulaşarak tüm MSI serisi için yeni bir rekora imza attı
+                Grup Aşamasındaki maçlar çeşitli sonuçlar sergiledi. Play-off'ların ilk iki gününde Top Esports ve Gen.G, belirsizlikten uzak, ikna edici bir 3:0 galibiyet elde etti. Bu arada, BiliBili Gaming ile PSG Talon arasındaki mücadele daha dengeli bir şekilde gerçekleşti ve BiliBili Gaming, belirleyici beşinci oyuna kadar istikrarlı liderliğini korudu.
+                Ancak ilk turun en çekişmeli karşılaşması G2 Esports ile T1 arasında yaşandı. Momentum iki takım arasında ileri geri sallandı: Başlangıçta T1 liderliği ele geçirdi, ancak daha sonra G2 öne geçti. Final maçı, her iki takımın da dikkat çekici bir oyun sergilediği, cesur mücadeleler ve stratejik manevralar sergilediği şiddetli bir mücadeleye sahne oldu. G2, T1'i defalarca hazırlıksız yakalamasına rağmen, bu fırsatlardan yararlanamadılar. T1, Baronlar ve Drake'ler gibi hedefleri güvence altına alarak üstün bir makro oyun sergiledi. 
+                T1 hazırlandıktan sonra, düşman üssünü sistemli bir şekilde kuşatmaya başladılar ve sistematik olarak şeritleri birbiri ardına parçaladılar. G2'nin umutsuz bir karşı saldırı girişimine rağmen, kritik bir konum hatası, birkaç saniye içinde hızlı bir yenilgiye uğramalarına yol açtı. Sonuçta seri, son dünya şampiyonunun lehine 3:2'lik bir skorla sona erdi.
+            </span>
+            <a href="https://escharts.com/tr/news/msi-2024-bracket-stage-viewership">Daha Fazla...</a>
+        </div>
+        <div class="news-article">
+            <h3>Counter Strike 2</h3>
+            <img src="https://cdnr.escharts.com/uploads/public/652/027/792/652027792b737034835254.png?width=32&amp;height=32&amp;mode=crop&amp;quality=75&amp;extension=png" class="w-4 h-4" alt="csgo">
+            <span>
+                ESL Pro League Sezon 19 yaklaşıyor ve turnuvanın bitimine sadece beş maç kaldı. Play-off'lar izleyicilerin keyif alabileceği pek çok sürükleyici seri sunarken, bazı üst düzey yarışmacılar şimdiden elendi. Esports Charts, playofflara ilişkin ara sonuçları sunmak için burada.
+                ESL Pro League Sezon 19 Raporu
+                12 takım, grup aşamasındaki performanslarına göre belirlenerek play-off'lara katılma hakkını garantiledi. Sonuçlar arasında dikkate değer olan, FaZe Clan'ın Natus Vincere'ye karşı kazandığı zaferdir; karrigaN'in ekibi, PGL Binbaşı Kopenhag 2024 finalindeki yenilginin intikamını almaya çalışır. Benzer şekilde MOUZ, kendilerini daha önce aynı turnuvadan eleyen G2 Esports'a karşı da karşılık vermeyi başardı.
+                Bugün için iki çeyrek final karşılaşması planlanıyor: Astralis vs Team Liquid ve Team Vitality vs FaZe Clan. İkinci yarışma, NAVI - FaZe ve Virtus.pro - The MongolZ maçları sırasında ulaşılan 354,3K PV ile turnuvanın mevcut en yüksek izlenme rekorunu kırma potansiyeline sahip.
+            </span>
+            <a href="https://escharts.com/tr/news/esl-pro-league-playoff-viewership">Daha Fazla...</a>
+        </div>
+        <div class="news-article">
+            <h3>Player Unknow's Battleground</h3>
+            <img src="https://cdnr.escharts.com/uploads/public/5c9/df6/6de/5c9df66deece9700917255.png?width=32&amp;height=32&amp;mode=crop&amp;quality=75&amp;extension=png" class="w-4 h-4" alt="pubg-mobile">
+            <span>Esports Charts, PUBG MOBILE Esports ile uzun yıllara dayanan ortaklığımızın uzatıldığını duyurmaktan büyük heyecan duyuyor. Geçtiğimiz üç yılda gelişen bu devam eden işbirliği, her iki tarafın da e-spor endüstrisini anlayışlı analizler ve veriye dayalı stratejiler yoluyla ilerletmeye yönelik karşılıklı kararlılığının bir kanıtıdır. Devam eden ittifak, Esports Charts'ın ortağımıza Esports pazarındaki çabalarının büyümesine ve başarısına katkıda bulunan en son çözümleri sunma konusundaki kararlılığının altını çiziyor.
+                "PUBG MOBILE Esports ile ortaklığımızı genişleterek Espor endüstrisini ileriye taşıma konusundaki ortak kararlılığımızı güçlendirmekten mutluluk duyuyoruz. Bu işbirliği, ortağımızın bilinçli, veriye dayalı kararlar almasını güçlendirecek ve sonuçta ortağımızın Esports girişimlerinin başarısı."
+                Artyom Odintsov, Esports Charts CEO'su
+                Yaklaşan ortaklık aşamasında, Esports Charts, etkinlikleri kapsayan topluluk yayıncılarının kapsamlı performans takibini de içeren ve en büyük turnuvaların canlı istatistik kapsamını sağlayan PUBG MOBILE Esports sahnesinin birincil analiz sağlayıcısı konumunu yeniden teyit etmekten heyecan duyuyor. Esports Charts, tüm yayın platformlarındaki Esports etkinliklerinin tam teşekküllü analizine adanmıştır ve mükemmellik taahhüdüyle en doğru verileri toplamaya çalışmaktadır.
+                E-Spor Listeleri Hakkında
+                Canlı yayın izleme analizinin lider sağlayıcısı Esports Charts, dünya çapındaki Esports turnuvaları, ligleri ve takım izleyicileri hakkında kapsamlı veriler ve analizler sunuyor. Şirket, Esports'un yanı sıra konserler, spor ve eğlence etkinlikleri de dahil olmak üzere diğer canlı etkinliklere ilişkin istatistikler de sağlıyor. Esports Charts, müşterilere hızla gelişen canlı yayın ekosisteminde güncel kalmaları için kritik öneme sahip benzersiz ve değerli bilgiler sağlayarak sektörde önemli bir oyuncu olarak öne çıkıyor. Hizmetleri, dinamik ve hızlı tempolu canlı yayın dünyasında rekabet avantajı elde etmek isteyen işletmeler tarafından oldukça rağbet görüyor. 
+                PUBG MOBILE Hakkında
+                PUBG MOBILE, 2017'de interaktif eğlence dünyasını kasıp kavuran fenomen PLAYERUNKNOWN'S BATTLEGROUNDS'u temel alıyor. 100'e kadar oyuncu, kazananın her şeyi aldığı bir hesaplaşmada savaşmak için uzak bir adaya paraşütle atlıyor. Oyuncular kendi silahlarını, araçlarını ve malzemelerini bulup temizlemeli ve oyuncuları daralan bir oyun alanına zorlayan görsel ve taktiksel açıdan zengin bir savaş alanında her oyuncuyu yenmelidir.
+                Daha fazla bilgi için lütfen Facebook, Twitter ve YouTube'daki resmi PUBG MOBILE hesaplarını ziyaret edin. PUBG MOBILE, App Store ve Google Play'den ücretsiz olarak indirilebilir.
+            </span>
+            <a href="https://escharts.com/tr/news/esports-charts-pubg-mobile-esports">Daha Fazla...</a>
+        </div>
+    </div>
+    <div class="rating" id="rating">
+        <span class="star" data-value="1" tabindex="0" role="button" aria-label="1 Star">&#9733;</span>
+        <span class="star" data-value="2" tabindex="0" role="button" aria-label="2 Stars">&#9733;</span>
+        <span class="star" data-value="3" tabindex="0" role="button" aria-label="3 Stars">&#9733;</span>
+        <span class="star" data-value="4" tabindex="0" role="button" aria-label="4 Stars">&#9733;</span>
+        <span class="star" data-value="5" tabindex="0" role="button" aria-label="5 Stars">&#9733;</span>
+      </div>
+      <div id="rating-value"></div>
+
+      <div class="button-container">
+        <button id="button1">Beğendim👍</button>    
+        <button id="button2">Beğenmedim💔</button>
+    </div>
+
+
+    <div id="exitModal" class="modal">
+        <div class="modal-content">
+          <p>YİNE BEKLERİİİZZZZ💕</p>
+        </div>
+      </div>
+
+      
+      <div>   
+        <footer>
+            <span><p>&copy; 2024 Game Store. All rights reserved.</p></span>
+        </footer>
+    </div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
